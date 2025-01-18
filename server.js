@@ -17,6 +17,7 @@ app.use((err,req,res,next)=>{
     const StatusCode = err.statusCode || 500;
     res.status(StatusCode).json({ Message: err.message });
 })
-app.listen(5,()=>{
-    console.log("The server is start in http://localhost:5");
-})
+app.listen(process.env.PORT || 5000, () => {
+    console.log(`The server is running on http://localhost:${process.env.PORT || 5000}`);
+  });
+  
